@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            background: #D4DFCD;
+            gap:10px;
+            display:flex;
+            flex-direction: column;
+        }
+
+        .formation-body-one{
+            margin: auto;
+            width: 100%;
+        }
+
+        .formation-body-one ul{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            gap: 10px;
+        }
+        .formation-body-one li{
+            background-color: #D4DFCD;
+            width: 100%;
+            padding: 16px;
+            list-style-type: none;
+            border-radius: 10px;
+        }
+
+        .formation-body-one label{
+            color: #243742;
+        }
+
+        .container-body{
+            background: #7EA06A60;
+            margin: auto;
+            padding: auto;
+            width: 50%;
+            height: 50%;
+            border-radius: 10px;
+        }
+
+        .rounded{
+            border-top: 0px  #D4DFCD;
+        }
+
+        .container-formation{
+            background: #7EA06A60;
+            margin: auto;
+            width: 50%;
+            height: 300px;
+            padding: 10px;
+        }
+
+        .dropbtn {
+          background: #7EA06A;
+          color: #243742;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          width: 20%;
+          border-radius: 5px;
+        }
+        .dropdown-input {
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          width: 76%;
+          border-radius: 10px;
+        }
+
+        .dropdown {
+          margin: 10px;   
+          display: inline-block;
+          width: 100%;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          border-bottom-left-radius: 10px;
+        }
+        
+        .dropdown-content a {
+          color: #243742;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .card__title {
+            grid-row: 3/4;
+            font-weight: 400;
+            color: #243742;
+        }
+
+        .card__apply {
+            grid-row: 4/5;
+            align-self: center;
+        }
+        .card__link{
+            color: #243742;
+        }
+
+        .card__icon {
+            position: relative;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .dropdown-content a:hover {background-color: #ddd;}
+        
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+    <title>Document</title>
+</head>
+
+<body class = "container">
+    <div class="container-body">
+        <div class="dropdown">
+            <input class="dropdown-input"></input>
+            <button class="dropbtn">Search</button>
+            <div class="dropdown-content">
+                <h6>Type </h6>
+                <input type = "checkbox" name = "01">
+                <label for = "checkbox 01"> checkbox 01 </label>
+                <input type = "checkbox" name = "02">
+                <label for = "checkbox 02"> checkbox 02 </label>
+                <input type = "checkbox" name = "03">
+                <label for = "checkbox 03"> checkbox 04 </label>
+              <h6>Type 2</h6>
+              <input type = "checkbox" name = "01">
+                <label for = "checkbox 01"> checkbox 01 </label>
+                <input type = "checkbox" name = "02">
+                <label for = "checkbox 02"> checkbox 02 </label>
+                <input type = "checkbox" name = "03">
+                <label for = "checkbox 03"> checkbox 04 </label>
+              <h6>Type 3</h6>
+              <label for = "checkbox 01"> checkbox 01 </label>
+                <input type = "checkbox" name = "02">
+                <label for = "checkbox 02"> checkbox 02 </label>
+                <input type = "checkbox" name = "03">
+                <label for = "checkbox 03"> checkbox 04 </label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-formation">
+        <div class="formation-body-one">
+            <ul>
+                <li>
+                    <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </li>
+                <li>
+                    <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                    <p class="card__apply">
+                        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </li>
+            <li>
+                <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <p class="card__apply">
+                    <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </p>
+            </li>
+        </ul>     
+        </div>
+    </div>
+</body>
+
+</html>
