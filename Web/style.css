@@ -1,0 +1,262 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.body{
+    background: #D4DFCD;
+    gap:10px;
+    display:flex;
+    flex-direction: column;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+.banner{
+    background:var(--color-background);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 100%;
+    height: 70vh;
+}
+        
+.banner-content{
+    color:var(--color-text);
+    width: 55%;
+    padding-top: 170px;
+}
+
+.banner-content h1{
+    margin-bottom: 10px;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-left: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.banner-content p{
+    margin-bottom: 40px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-left: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.formation-body-one{
+    margin: auto;
+    width: 100%;
+}
+
+.formation-body-one ul{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+}
+        
+.formation-body-one li{
+    background-color: var(--color-background);
+    width: 100%;
+    padding: 16px;
+    list-style-type: none;
+    border-radius: 10px;
+}
+
+.formation-body-one li:hover{
+    height: 200px;
+    font-size: large;
+}
+
+.formation-body-one .card__description{
+    font-size: 20px;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.formation-body-one label{
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container-body{
+    background: #7EA06A60;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.container-formation{
+    background: #7EA06A60;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;        
+}
+
+.container-map{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+        
+.back-map {
+    background: #7EA06A;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 20%;
+    border-radius: 5px;
+    margin: 16px;
+}
+
+.btn-map {
+    background: #7EA06A;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 20%;
+    border-radius: 5px;
+    margin: 16px;
+}
+
+.btn-map:hover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.dropbtn {
+    background: #7EA06A;
+    color: var(--color-text);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 20%;
+    border-radius: 5px;
+}
+        
+.dropdown-input {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 76%;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border-radius: 10px;
+}
+
+.dropdown {
+    margin: 10px;   
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-background);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: auto;
+    width: 50%;
+}
+        
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+    background-color: var(--color-background);
+}
+        
+.dropdown-menu-header {
+    padding-top: 4px;        
+    padding-bottom: 4px;
+}
+        
+.dropdown-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: space-around;   
+    margin-top: 5px;
+}
+        
+.dropdown-menu-item {
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+        
+.dropdown-menu-item input:checked + span,
+        
+.dropdown-menu-item:hover {
+    border-radius: 10px;
+    width: 100px;
+    background: #7EA06A;
+    color: var(--color-background);
+    padding: 10px;        
+}
+        
+.dropdown-menu-item input {
+    display: none;
+}
+        
+.card__title {
+    grid-row: 3/4;
+    font-weight: 400;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+        
+.card__apply {
+    grid-row: 4/5;
+    align-self: center;
+}
+        
+.card__link{
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;        
+}
+
+.card__icon {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+:root {
+    --color-text: #243742;
+    --color-background: #D4DFCD;
+}
+
+/* 2. Add conditional styling for dark mode preference */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #D4DFCD; 
+        --color-background: #243742;
+    }
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+                
+.dropdown:hover .dropdown-content {display: block;}
+                
+.dropdown:hover .dropbtn {background-color: var(--color-background);}
+        

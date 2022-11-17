@@ -6,209 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        .body{
-            background: #D4DFCD;
-            gap:10px;
-            display:flex;
-            flex-direction: column;
-        }
-        .banner{
-            background: #7EA06A;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            width: 100%;
-            height: 70vh;
-        }
-        .banner-content{
-            color:#243742;
-            width: 55%;
-            padding-top: 170px;
-        }
-
-        .banner-content h1{
-            margin-bottom: 10px;
-            font-size: 60px;
-            font-weight: 600;
-            letter-spacing: 5px;
-            margin-left: 30px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        .banner-content p{
-            margin-bottom: 40px;
-            font-size: 18px;
-            letter-spacing: 1px;
-            margin-left: 30px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-
-        .formation-body-one{
-            margin: auto;
-            width: 100%;
-           
-        }
-
-        .formation-body-one ul{
-            display:flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-direction: column;
-            height: 100%;
-            gap: 10px;
-        }
-        .formation-body-one li{
-            background-color: #D4DFCD;
-            width: 100%;
-            padding: 16px;
-            list-style-type: none;
-            border-radius: 10px;
-        }
-
-        .formation-body-one label{
-            color: #243742;
-        }
-
-        .container-body{
-            background: #7EA06A60;
-            margin: auto;
-            padding: auto;
-            display: flex;
-            flex-direction: row;
-            align-content: center;
-            width: 50%;
-            height: 50%;
-            border-radius: 10px;
-        }
-
-        .container-formation{
-            background: #7EA06A60;
-            width: 50%;
-            height: 100%;
-            padding: 10px;
-            margin: auto;
-            border-radius: 10px;
-            
-        }
-
-        .container-carte {
-            background: #7EA06A;
-            color: #243742;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            width: 20%;
-            border-radius: 5px;
-            margin: 16px;
-        }
-
-        .dropbtn {
-          background: #7EA06A;
-          color: #243742;
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-          width: 20%;
-          border-radius: 5px;
-        }
-        .dropdown-input {
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-          width: 76%;
-          border-radius: 10px;
-        }
-
-        .dropdown {
-          margin: 10px;   
-          display: inline-block;
-          width: 100%;
-        }
-
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f1f1f1;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-          width: 840px;
-          
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
-            background-color: #fff;
-        }
-        .dropdown-menu-header {
-            padding-top: 4px;
-            padding-bottom: 4px;
-        }
-        .dropdown-menu-list {
-            display: flex;
-            flex-direction: row;
-            gap:20px;
-            justify-content: space-around;
-            margin-top: 5px;
-        }
-        .dropdown-menu-item {
-            width: 100px;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .dropdown-menu-item input:checked + span,
-        .dropdown-menu-item:hover {
-            border-radius: 10px;
-            width: 100px;
-            background: #3e8e41;
-            color: #fff;
-            padding: 10px;
-        }
-
-        .dropdown-menu-item input {
-            display: none;
-        }
-
-        .card__title {
-            grid-row: 3/4;
-            font-weight: 400;
-            color: #243742;
-        }
-
-        .card__apply {
-            grid-row: 4/5;
-            align-self: center;
-        }
-        .card__link{
-            color: #243742;
-        }
-
-        .card__icon {
-            position: relative;
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .dropdown-content a:hover {background-color: #ddd;}
-        
-        .dropdown:hover .dropdown-content {display: block;}
-        
-        .dropdown:hover .dropbtn {background-color: #3e8e41;}
-        </style>
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
 </head>
 
 <body class = "body">
+    
     <div class=" banner">
         <div class = "banner-content">
             <h1>Formation Green</h1>
@@ -220,7 +23,11 @@
         </div>
 
     </div>
-    <button class = "container-carte">Carte</button>
+    <div class="container-map">
+        <button class = "btn-map">Carte</button>
+        <button class = "back-map">Retour</button>
+    </div>
+    
     <div class="container-body">
         <div class="dropdown">
             <input class="dropdown-input"></input>
@@ -230,38 +37,38 @@
                     <div class="dropdown-menu-header">Select language</div>
                     <div class="dropdown-menu-list">
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="All" checked>
+                        <input type="checkbox" name="item" value="All" checked/>
                         <span>All</span>
                       </label>
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="HTML">
+                        <input type="checkbox" name="item" value="HTML">
                         <span>HTML</span>
                       </label>
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="CSS">
+                        <input type="checkbox" name="item" value="CSS">
                         <span>CSS</span>
                       </label>
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="JavaScript">
+                        <input type="checkbox" name="item" value="JavaScript">
                         <span>JavaScript</span>
                       </label>
                     </div>
                     <div class="dropdown-menu-header">Formation</div>
                     <div class="dropdown-menu-list">
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="Français" checked>
+                        <input type="checkbox" name="language" value="Français" checked>
                         <span>Français</span>
                       </label>
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="Anglais">
+                        <input type="checkbox" name="language" value="Anglais">
                         <span>Anglais</span>
                       </label>
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="Allemand">
+                        <input type="checkbox" name="language" value="Allemand">
                         <span>Allemand</span>
                       </label>
                       <label class="dropdown-menu-item">
-                        <input type="radio" name="item" value="Créole">
+                        <input type="checkbox" name="language" value="Créole">
                         <span>Créole</span>
                       </label>
                     </div>
@@ -274,30 +81,35 @@
             <ul>
                 <li>
                     <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                    <h6 class="card__description">Descriptif</h6>
                     <p class="card__apply">
-                        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                        <a class="card__link" href="#">Apply Now </a>
                     </p>
                 </li>
                 <li>
                     <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                    <h6 class="card__description">Descriptif</h6>
                     <p class="card__apply">
-                        <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                        <a class="card__link" href="#">Apply Now </a>
                     </p>
                 </li>
             <li>
                 <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h6 class="card__description">Descriptif</h6>
+                <p class="card__apply">
+                    <a class="card__link" href="#">Apply Now </a>
+                </p>
+            </li>
+            <li>
+                <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h6 class="card__description">Descriptif</h6>
                 <p class="card__apply">
                     <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
                 </p>
             </li>
             <li>
                 <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                <p class="card__apply">
-                    <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-                </p>
-            </li>
-            <li>
-                <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h6 class="card__description">Descriptif</h6>
                 <p class="card__apply">
                     <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
                 </p>
