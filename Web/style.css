@@ -258,3 +258,72 @@
 .dropdown:hover .dropdown-content {display: block;}
                 
 .dropdown:hover .dropbtn {background-color: var(--color-background);}
+
+.login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--color-text);
+    outline: none;
+    background: var(--color-background);
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--color-text);
+    pointer-events: none;
+    transition: .5s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: var(--color-background);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px var(--color-background);
+    border-radius: 10px;
+  }
+
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--color-text);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .submit-box {
+    background: #7EA06A;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+    margin: 16px;
+    text-align: center;
+}
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #7EA06A;
+    font-size: 12px;
+  }
