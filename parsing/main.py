@@ -1,8 +1,8 @@
 import json
 
 def write_data(dict):
-    with open('rapport.csv', "a+", encoding='utf8') as report:
-        report.write(json.dumps(dict, indent=4))
+    with open('rapport.json', "a+", encoding='utf8') as report:
+        report.write(json.dumps(dict, indent=4, ensure_ascii=False))
 
 def processline(row):
     listElement = row.split(';')
@@ -15,7 +15,7 @@ def processline(row):
 
 ListFormation=[]
 #clean/mise en forme CSV
-with open('data_fr.csv', 'r',encoding='utf8') as file:
+with open('data_fr.csv', 'r', encoding='utf8') as file:
     creatline = ''
     for row in file:
         if row[0] == '-':
@@ -32,9 +32,13 @@ with open('data_fr.csv', 'r',encoding='utf8') as file:
 
 #Création json
 listTitle =  ListFormation[0].split(';')
+idxId = 0
 for element in ListFormation[1:]:
     jsonElement = {}
     listelement =  element.split(';')
     for idx, col in enumerate(listTitle):
+        if idx == 1 : 
+            idxId += 1
+            jsonElement['id'] = idxId
         jsonElement[col] = listelement[idx]
     write_data(jsonElement)
