@@ -11,6 +11,7 @@
 </head>
 
 <body class = "body">
+
     
     <div class=" banner">
         <div class = "banner-content">
@@ -24,8 +25,9 @@
 
     </div>
     <div class="container-map">
-        <button class = "btn-map">Carte</button>
-        <button class = "back-map">Retour</button>
+        <button class = "btn-map" id="btn-map">Carte</button>
+        <button class = "back-map" id="back-map">Retour</button>
+
     </div>
     
     <div class="container-body">
@@ -78,45 +80,46 @@
     </div>    
     <div class="container-formation">
         <div class="formation-body-one">
-            <ul>
-                <li>
+            <ul id="selected">
+                <li  onclick="getColors">
                     <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                     <h6 class="card__description">Descriptif</h6>
                     <p class="card__apply">
                         <a class="card__link" href="#">Apply Now </a>
                     </p>
                 </li>
-                <li>
+                <li  onclick="e => getColors(e)">
                     <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                     <h6 class="card__description">Descriptif</h6>
                     <p class="card__apply">
                         <a class="card__link" href="#">Apply Now </a>
                     </p>
                 </li>
-            <li>
+            <li  onclick="e => getColors(e)">
                 <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                 <h6 class="card__description">Descriptif</h6>
                 <p class="card__apply">
                     <a class="card__link" href="#">Apply Now </a>
                 </p>
             </li>
-            <li>
+            <li  onclick="e => getColors(e)">
                 <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                 <h6 class="card__description">Descriptif</h6>
                 <p class="card__apply">
-                    <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    <a class="card__link" href="#">Apply Now</a>
                 </p>
             </li>
-            <li>
+            <li onclick="getColors()">
                 <h2 class="card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                 <h6 class="card__description">Descriptif</h6>
                 <p class="card__apply">
-                    <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    <a class="card__link" href="#">Apply Now </a>
                 </p>
             </li>
         </ul>     
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
