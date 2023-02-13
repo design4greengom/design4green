@@ -1,0 +1,319 @@
+:root {
+    --toggle-height: 2rem;
+    --toggle-width: 4rem;
+    --toggle-c-offset: .33rem;
+
+    --green: #739E82;
+    --grey: #424242;
+    --light: #F3EBE2;
+    --light-dark-mode: #ede1d4;
+    --pur-black: #000000;
+    --light-alpha: #F3EBE270;
+    --toggle-off: var(--green);
+    --toggle-on: var(--grey);
+    --toggle-c-back: #F3EBE2;
+
+    --border-radius: .75rem;
+    --padding: .5rem;
+
+    color: var(--grey);
+    font-family: 'Trebuchet MS', sans-serif;
+    --font: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .85em;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.toggle {
+    position: relative;
+    display: block;
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+}
+
+.toggle i {
+    display: block; position: absolute;
+    inset: 0;
+
+    border-radius: var(--toggle-height);
+    cursor: pointer;
+    background: var(--toggle-off);
+}
+
+.toggle i::before {
+    content: "";
+    position: absolute;
+    inset: var(--toggle-c-offset);
+
+    height: calc(var(--toggle-height) - (var(--toggle-c-offset) * 2));
+    aspect-ratio: auto 1 / 1;
+    border-radius: 50%;
+
+    background: var(--toggle-c-back);
+
+    transition: transform .2s ease-in-out;
+}
+
+.toggle input:checked + i { background: var(--toggle-on); }
+
+.toggle input:checked + i::before {
+    transform: translateX(150%);
+}
+
+[data-page] {
+    background: var(--green);
+    color: var(--grey);
+    font-family: var(--font);
+    padding: .8em;
+    border: none;
+    border-radius: .3em;
+    margin: 0.2em;
+}
+
+
+[data-page]:hover {
+    background: var(--grey);
+    color: var(--light)
+
+}
+:root:has(.toggle input:checked) [data-page]{
+    background: var(--grey);
+    color: var(--light-dark-mode);
+}
+:root:has(.toggle input:checked) [data-page]:hover{
+    background: var(--green);
+    color: var(--light-dark-mode);
+}
+.btn-toolbar{
+    grid-area: buttons;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    place-items: stretch;
+    background-color: var(--light);
+}
+
+:root:has(.toggle input:checked) body{
+background-color:var(--pur-black);
+color: var(--light-dark-mode);
+}
+
+
+header {
+    display: grid;
+    grid-template-columns: 5fr 4fr 1fr 1fr;
+    place-items: center;
+    gap: 5rem;
+
+    padding: 2.5rem;
+    margin-bottom: 7.5rem;
+
+    border-bottom: solid 1px var(--green);
+    text-transform: uppercase;
+}
+
+header h1 span {
+    font-size: 1.25em;
+}
+
+header .toggle {
+    grid-column-start: 3;
+}
+
+:root:has(.toggle input:checked) [data-list] {
+    background: var(--grey);
+}
+
+.data-container {
+    display: grid;
+    grid-template-areas: "filters buttons"
+                        "filters table";
+    grid-template-columns: 2fr 4fr 1fr;
+
+}
+
+.filters {
+    grid-area: filters;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin: 0 2rem;
+}
+
+.filter-group {
+    display: grid;
+    grid-template-areas: "title";
+    grid-template-columns: repeat(2, 1fr);
+    accent-color: var(--green);
+
+    padding: 1.5rem;
+
+    border-radius: var(--border-radius);
+    border: solid 1px var(--green);
+}
+
+.filters button {
+    background: var(--green);
+    color: var(--grey);
+    font-family: var(--font);
+
+    padding: .8em;
+    border: none;
+    border-radius: .3em;
+    margin: 0.2em;
+
+    cursor: pointer;
+}
+
+.filter-group h2 {
+    grid-area: title;
+    grid-column: 1 / 3;
+    margin-bottom: 1rem;
+}
+
+[data-list] {
+    --border-radius: .75rem;
+    --padding: .5rem;
+
+    grid-area: table;
+
+    display: flex;
+    flex-direction: column;
+    place-items: stretch;
+    gap: .5rem;
+
+    border-radius: var(--border-radius);
+
+    max-width: 75vw;
+    margin: 0 4rem 4rem 4rem;
+    padding: var(--padding);
+    border-collapse: collapse;
+
+    background: var(--green);
+}
+
+[data-list] thead {
+    overflow: hidden;
+    border-radius: calc(var(--border-radius) - var(--padding) / 2) calc(var(--border-radius) - var(--padding) / 2) 0 0;
+}
+
+[data-list] tbody {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    overflow: hidden;
+    border-radius: 0 0 calc(var(--border-radius) - var(--padding) / 2) calc(var(--border-radius) - var(--padding) / 2);
+}
+
+[data-list] thead tr, [data-list] tbody tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    width: 100%;
+
+    background: var(--light-alpha);
+}
+
+:root:has(.toggle input:checked) [data-list] tbody tr {
+    background: var(--grey);
+}
+
+[data-list] th, [data-list] td {
+    padding: 10px;
+}
+
+.map-container {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: auto 1 / 1;
+
+    height: 10rem;
+    width: 10rem;
+
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    background: var(--green);
+    overflow: hidden;
+
+    transform-origin: top right;
+    transform: scale(1);
+    transition: height .5s ease-in-out, width .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.map-container button[data-close] {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    pointer-events: none;
+}
+
+.map-container:has([data-opened]) {
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
+}
+
+.map-container:has([data-opened]) button[data-close] {
+    display: block;
+    pointer-events: all;
+}
+
+canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.popup{
+    background: var(--grey);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-contenant{
+    height: 250px;
+    width: 500px;
+    background: var(--light);
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+form input{
+    margin: 20px auto;
+    display:block;
+    width: 50%;
+    padding: 8px
+}
+
+.close{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: var(--light);
+}

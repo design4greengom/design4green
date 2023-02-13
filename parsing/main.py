@@ -34,8 +34,8 @@ with open('data_fr.csv', 'r', encoding='utf8') as file:
                 creatline = ''
 
 # Création json
-listTitle = ['id', 'nom formation', 'type', 'établissement', 'unité', 'cycle', 'Objectif', 'description', 'organisme', \
-             'intitulé', 'localisation', 'validation aquis', 'durée', 'accès', 'site']
+listTitle = ['id', 'nomFormation', 'type', 'etablissement', 'unite', 'cycle', 'objectif', 'description', 'organisme', \
+             'intitule', 'localisation', 'validationAquis', 'duree', 'acces', 'site']
 ListDic = []
 idxId = 0
 for element in ListFormation[1:]:
@@ -46,6 +46,5 @@ for element in ListFormation[1:]:
             idxId += 1
             jsonElement['id'] = str(idxId)
         jsonElement[col] = listelement[idx]
-        jsonElement[col] = listelement[idx]
-        ListDic.append(jsonElement)
+    ListDic.append(jsonElement)
 write_data(ListDic)

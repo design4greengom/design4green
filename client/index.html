@@ -1,17 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Design4Green</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="map.js" defer></script>
+    <script type="text/javascript" src="fetch.js" defer></script>
+    <title>Design 4 Green - Team 29</title>
 </head>
 <body>
-<h1>Page test qui fetch les données</h1>
-<div id="data-visualizer"></div>
-<input type="text" placeholder="id" name="idChoice">
-<button data-js-fetch>Update le filtre</button>
-<canvas id="map" style="border: solid red 2px; border-radius: 5%; overflow: hidden; resize: both;"></canvas>
-<img src="./map.png" hidden>
-<script type="text/javascript" src="map.js"></script>
-<script type="text/javascript" src="fetch.js"></script>
+<header>
+    <h1>Design<span>4</span>Green - Team 29</h1>
+
+    <label class="toggle">
+        <input type="checkbox" id="ChangeTheme" hidden/>
+        <i></i>
+    </label>
+</header>
+
+<div class="map-container">
+    <canvas id="map"></canvas>
+    <button data-close>X</button>
+    <img src="./map.png" hidden>
+</div>
+
+<div class="data-container">
+    <div class="filters">
+        <div class="filter-group" data-filtername="duree">
+            <h2>Durée de la formation (en J)</h2>
+            <label><input type="checkbox" data-filtervalue="1">1</label>
+            <label><input type="checkbox" data-filtervalue="1,5">1,5</label>
+            <label><input type="checkbox" data-filtervalue="2">2</label>
+            <label><input type="checkbox" data-filtervalue="3">3</label>
+            <label><input type="checkbox" data-filtervalue="8">8</label>
+        </div>
+
+        <div class="filter-group" data-filtername="acces">
+            <h2>Modalités d'accès</h2>
+            <label><input type="checkbox" data-filtervalue="Distanciel">Distanciel</label>
+            <label><input type="checkbox" data-filtervalue="Présentiel">Présentiel</label>
+            <label><input type="checkbox" data-filtervalue="Présentiel et distanciel">Présentiel et distanciel</label>
+        </div>
+        <div class="filter-group" data-filtername="localisation">
+            <h2>Localisation</h2>
+            <label><input type="checkbox" data-filtervalue="National">National</label>
+            <label><input type="checkbox" data-filtervalue="Toulouse">Toulouse</label>
+            <label><input type="checkbox" data-filtervalue="Rennes">Rennes</label>
+            <label><input type="checkbox" data-filtervalue="Paris">Paris</label>
+            <label><input type="checkbox" data-filtervalue="Toute la France">Toute la France</label>
+            <label><input type="checkbox" data-filtervalue="La Bernardière">La Bernardière</label>
+            <label><input type="checkbox" data-filtervalue="Versailles">Versailles</label>
+            <label><input type="checkbox" data-filtervalue="Puteaux-La défense">Puteaux-La défense</label>
+            <label><input type="checkbox" data-filtervalue="Saint-Barthélemy d'Anjou">Saint-Barthélemy d'Anjou</label>
+            <label><input type="checkbox" data-filtervalue="Rouen">Rouen</label>
+            <label><input type="checkbox" data-filtervalue="Anglet">Anglet</label>
+            <label><input type="checkbox" data-filtervalue="Bordeaux">Bordeaux</label>
+            <label><input type="checkbox" data-filtervalue="Lille">Lille</label>
+            <label><input type="checkbox" data-filtervalue="La Rochelle">La Rochelle</label>
+            <label><input type="checkbox" data-filtervalue="Évry">Évry</label>
+            <label><input type="checkbox" data-filtervalue="Albi">Albi</label>
+            <label><input type="checkbox" data-filtervalue="Montpellier">Montpellier</label>
+            <label><input type="checkbox" data-filtervalue="Ales">Ales</label>
+            <label><input type="checkbox" data-filtervalue="Saint-Étienne">Saint-Étienne</label>
+            <label><input type="checkbox" data-filtervalue="Nantes">Nantes</label>
+            <label><input type="checkbox" data-filtervalue='"Levallois-Perret"'>Levallois-Perret</label>
+            <label><input type="checkbox" data-filtervalue="Saint-Etienne-de-Montluc">Saint-Etienne-de-Montluc</label>
+        </div>
+
+        <button id="updateFilter">Search</button>
+        <button class="email-btn" id="email-btn">Email</button>
+    </div>
+
+    <div class="btn-toolbar">
+        <button data-page=1>1</button>
+        <button data-page=2>2</button>
+        <button data-page=3>3</button>
+        <button data-page=4>4</button>
+        <button data-page=5>5</button>
+        <button data-page=6>6</button>
+        <button data-page=7>7</button>
+    </div>
+
+    <table data-list>
+        <thead>
+        <tr>
+            <th>Nom de la formation</th>
+            <th>Localisation</th>
+            <th>Durée de la formation / intervention (en j)</th>
+            <th>Modalités d’accès à la formation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="4">Aucun résultat de correspond à la recherche</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="popup">
+    <div class="popup-contenant">
+        <img src="mail.png" alt="Close" class="close">
+        <form action="mailto:design4green@etik.com" method="post" enctype="text/plain">
+            <div class="user-box">
+                <input type="text" name="mail" placeholder="Email" required>
+                <input type="text" name="comment" required placeholder="Comment" size="50">
+            </div>
+            <input class="submit-box" type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
